@@ -5,29 +5,8 @@
         <title>Title</title>  
         
      <script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
-    </head>  
-    <body>  
-    <select id="province"></select>  
-    <select id="city"></select>  
-    <script>  
-        (function(){  
-            var pHtmlStr = '';  
-            for(var name in pc){  
-                pHtmlStr = pHtmlStr + '<option>'+name+'</option>';  
-            }  
-            $("#province").html(pHtmlStr);  
-            $("#province").change(function(){  
-                var pname = $("#province option:selected").text();  
-                var pHtmlStr = '';  
-                var cityList = pc[pname];  
-                for(var index in cityList){  
-                    pHtmlStr = pHtmlStr + '<option>'+cityList[index]+'</option>';  
-                }  
-                $("#city").html(pHtmlStr);  
-            });  
-            $("#province").change();  
-        })(); 
-    var pc = new Object();  
+        <script> 
+            var pc = new Object();  
     pc['北京市'] = new Array('朝阳区', '海淀区', '通州区', '房山区', '丰台区', '昌平区', '大兴区', '顺义区', '西城区', '延庆县', '石景山区', '宣武区', '怀柔区', '崇文区', '密云县', '东城区', '平谷区', '门头沟区');  
     pc['广东省'] = new Array('东莞市', '广州市', '中山市', '深圳市', '惠州市', '江门市', '珠海市', '汕头市', '佛山市', '湛江市', '河源市', '肇庆市', '清远市', '潮州市', '韶关市', '揭阳市', '阳江市', '梅州市', '云浮市', '茂名市', '汕尾市');  
     pc['山东省'] = new Array('济南市', '青岛市', '临沂市', '济宁市', '菏泽市', '烟台市', '淄博市', '泰安市', '潍坊市', '日照市', '威海市', '滨州市', '东营市', '聊城市', '德州市', '莱芜市', '枣庄市');  
@@ -61,7 +40,33 @@
     pc['新疆维吾尔自治区'] = new Array('乌鲁木齐市', '伊犁州', '昌吉州', '石河子市', '哈密地区', '阿克苏地区', '巴音郭楞州', '喀什地区', '塔城地区', '克拉玛依市', '和田地区', '阿勒泰州', '吐鲁番地区', '阿拉尔市', '博尔塔拉州', '五家渠市', '克孜勒苏州', '图木舒克市');  
     pc['西藏区'] = new Array('拉萨市', '山南地区', '林芝地区', '日喀则地区', '阿里地区', '昌都地区', '那曲地区');  
     pc['吉林省'] = new Array('吉林市', '长春市', '白山市', '延边州', '白城市', '松原市', '辽源市', '通化市', '四平市');  
-    pc['宁夏回族自治区'] = new Array('银川市', '吴忠市', '中卫市', '石嘴山市', '固原市');  		
+    pc['宁夏回族自治区'] = new Array('银川市', '吴忠市', '中卫市', '石嘴山市', '固原市');  
+            </script>
+    </head>  
+    <body>  
+    <select id="province"></select>  
+    <select id="city"></select>  
+    <script>  
+       
+    
+        
+         (function(){  
+            var pHtmlStr = '';  
+            for(var name in pc){  
+                pHtmlStr = pHtmlStr + '<option>'+name+'</option>';  
+            }  
+            $("#province").html(pHtmlStr);  
+            $("#province").change(function(){  
+                var pname = $("#province option:selected").text();  
+                var pHtmlStr = '';  
+                var cityList = pc[pname];  
+                for(var index in cityList){  
+                    pHtmlStr = pHtmlStr + '<option>'+cityList[index]+'</option>';  
+                }  
+                $("#city").html(pHtmlStr);  
+            });  
+            $("#province").change();  
+        })(); 
     </script>  
     </body>  
     </html>  
